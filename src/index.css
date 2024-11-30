@@ -247,3 +247,64 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
+/* Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  color: black;
+}
+
+nav.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  color: black;
+}
+
+footer.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+.details-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.details-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

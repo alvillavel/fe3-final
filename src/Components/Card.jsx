@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ContextGlobal } from "../Components/utils/global.context"; // Ruta original del contexto global
 
 const Card = ({ name, username, id }) => {
-  const navigate = useNavigate();
   const { dispatch } = useContext(ContextGlobal);
 
   const addFav = () => {
@@ -19,7 +18,10 @@ const Card = ({ name, username, id }) => {
       <h3>{name}</h3>
       <p>Username: {username}</p>
       <button onClick={addFav} className="favButton">Add Fav</button>
-      <button onClick={() => navigate(`/dentist/${id}`)}>View Details</button>
+      {/* Usamos un enlace para navegar al detalle del dentista */}
+      <Link to={`/dentist/${id}`} className="details-link">
+        View Details
+      </Link>
     </div>
   );
 };

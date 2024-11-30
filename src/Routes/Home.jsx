@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import Card from '../Components/Card';
+import React, { useContext } from "react";
+import Card from "../Components/Card";
 import { ContextGlobal } from "../Components/utils/global.context";
 
 const Home = () => {
@@ -23,3 +23,4 @@ const Home = () => {
 };
 
 export default Home;
+

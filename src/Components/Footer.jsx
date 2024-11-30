@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { ContextGlobal } from "../Components/utils/global.context"; 
 
 const Footer = () => {
-  return (
-    <footer>
-        <p>Powered by</p>
-        <img src="./img/DH.png" alt='DH-logo' />
-    </footer>
-  )
-}
+  const { state } = useContext(ContextGlobal);
 
-export default Footer
+  return (
+    <footer className={state.theme === "dark" ? "dark-theme" : "light-theme"}>
+      <p>Powered by</p>
+      <img src="./img/DH.png" alt="DH-logo" />
+    </footer>
+  );
+};
+
+export default Footer;
+
+
