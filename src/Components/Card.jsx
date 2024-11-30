@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ContextGlobal } from "../Components/utils/global.context";
 
 const Card = ({ name, username, id }) => {
   const navigate = useNavigate();
+  const { dispatch, state } = useContext(ContextGlobal);
 
   const addFav = () => {
-    const existingFavs = JSON.parse(localStorage.getItem("favorites")) || [];
-    if (!existingFavs.find((fav) => fav.id === id)) {
-      const newFav = { id, name, username };
-      localStorage.setItem("favorites", JSON.stringify([...existingFavs, newFav]));
-      alert(`${name} ha sido añadido a favoritos`);
-    } else {
-      alert(`${name} ya está en favoritos`);
-    }
+    dispatch({
+      type: "ADD_FAV",
+      payload: { id, name, username },
+    });
+    alert(`${name} ha sido añadido a favoritos`);
   };
 
   return (
@@ -26,4 +25,5 @@ const Card = ({ name, username, id }) => {
 };
 
 export default Card;
-  
+
+

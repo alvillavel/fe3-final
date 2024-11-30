@@ -1,42 +1,51 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import React, { createContext, useReducer, useEffect } from "react";
 
 export const initialState = {
-  theme: 'light',
-  data: [], // Aquí guardamos los datos de la API
-  favorites: [],
+  theme: "light",
+  data: [],
+  favorites: JSON.parse(localStorage.getItem("favorites")) || [], // Cargar favoritos desde localStorage al iniciar
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case 'TOGGLE_THEME':
-      return { ...state, theme: state.theme === 'light' ? 'dark' : 'light' };
-    case 'SET_DATA':
-      return { ...state, data: action.payload }; // Guardar los datos de la API
-    case 'ADD_FAV':
+    case "TOGGLE_THEME":
+      return { ...state, theme: state.theme === "light" ? "dark" : "light" };
+    case "SET_DATA":
+      return { ...state, data: action.payload };
+    case "ADD_FAV":
+      // Evitar duplicados en favoritos
+      if (state.favorites.find((fav) => fav.id === action.payload.id)) {
+        return state;
+      }
       return { ...state, favorites: [...state.favorites, action.payload] };
     default:
       return state;
   }
 };
 
-export const ContextGlobal = createContext(undefined);
+export const ContextGlobal = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Llamada a la API para obtener datos y guardarlos en el contexto global
+  // Llamar a la API para obtener datos
   useEffect(() => {
-    const fetchDentists = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
         const data = await response.json();
-        dispatch({ type: 'SET_DATA', payload: data });
+        dispatch({ type: "SET_DATA", payload: data });
       } catch (error) {
-        console.error('Error fetching dentists:', error);
+        console.error("Error fetching data:", error);
       }
     };
-    fetchDentists();
+    fetchData();
   }, []);
+
+  // Sincronizar favoritos con localStorage
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(state.favorites));
+  }, [state.favorites]);
 
   return (
     <ContextGlobal.Provider value={{ state, dispatch }}>
@@ -44,4 +53,3 @@ export const ContextProvider = ({ children }) => {
     </ContextGlobal.Provider>
   );
 };
-
