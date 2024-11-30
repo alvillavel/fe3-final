@@ -6,7 +6,7 @@ const Home = () => {
   const { state } = useContext(ContextGlobal);
 
   return (
-    <main className={state.theme === 'dark' ? 'dark' : 'light'}>
+    <main className={state.theme === "dark" ? "dark-theme" : "light-theme"}>
       <h1>Home</h1>
       <div className="card-grid">
         {state.data.map((dentist) => (

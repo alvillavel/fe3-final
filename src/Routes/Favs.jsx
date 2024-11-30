@@ -5,7 +5,7 @@ const Favs = () => {
   const { state } = useContext(ContextGlobal);
 
   return (
-    <main>
+    <main className={state.theme === "dark" ? "dark-theme" : "light-theme"}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
         {state.favorites.length > 0 ? (
