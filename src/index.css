@@ -120,3 +120,32 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  width: 200px;
+  background-color: #fff;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.favButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.favButton:hover {
+  background-color: #0056b3;
+}

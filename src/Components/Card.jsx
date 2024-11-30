@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContextGlobal } from "../Components/utils/global.context";
+import { ContextGlobal } from "../Components/utils/global.context"; // Ruta original del contexto global
 
 const Card = ({ name, username, id }) => {
   const navigate = useNavigate();
-  const { dispatch, state } = useContext(ContextGlobal);
+  const { dispatch } = useContext(ContextGlobal);
 
   const addFav = () => {
     dispatch({
       type: "ADD_FAV",
       payload: { id, name, username },
     });
-    alert(`${name} ha sido añadido a favoritos`);
+    alert(`${name} ha sido añadido a favoritos.`);
   };
 
   return (
@@ -25,5 +25,7 @@ const Card = ({ name, username, id }) => {
 };
 
 export default Card;
+
+
 
 
