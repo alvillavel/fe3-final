@@ -11,8 +11,9 @@ const Favs = () => {
         {state.favorites.length > 0 ? (
           state.favorites.map((fav) => (
             <div key={fav.id} className="card">
+              <img src="/images/doctor.jpg" alt="Doctor" className="card-image" />
               <h3>{fav.name}</h3>
-              <p>Username: {fav.username}</p>
+              <p>{fav.username}</p>
             </div>
           ))
         ) : (

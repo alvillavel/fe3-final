@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ContextGlobal } from "../Components/utils/global.context"; // Ajusta la ruta según tu estructura
+import { ContextGlobal } from "../Components/utils/global.context"; 
 
 const Navbar = () => {
   const { state, dispatch } = useContext(ContextGlobal);
