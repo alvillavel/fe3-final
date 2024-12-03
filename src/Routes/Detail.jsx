@@ -23,7 +23,7 @@ const Detail = () => {
 
   return (
     <main className={state.theme === "dark" ? "dark-theme" : "light-theme"}>
-      <h1>Detail Dentist ID: {id}</h1>
+      <h1>Detail Dentist {id}</h1>
       {dentist ? (
         <div className="dentist-details">
           <h2>{dentist.name}</h2>

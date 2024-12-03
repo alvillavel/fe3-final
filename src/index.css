@@ -9,17 +9,21 @@ body {
 }
 
 /* Navbar Styles */
+
 nav {
   display: flex;
-  justify-content: flex-end; /* Alinea los enlaces a la derecha */
+  justify-content: flex-end; 
   align-items: center;
   padding: 1rem;
   background-color: #f9f9f9;
   color: black;
 }
+.navbar-title {
+  margin-left: auto; 
+}
 h1 {
-  text-align: center; /* Centra horizontalmente */
-  margin-top: 1rem;   /* Añade un margen superior */
+  text-align: center; 
+  margin-top: 1rem;   
 }
 
 
@@ -40,16 +44,15 @@ nav.dark-theme {
   color: white;
 }
 .theme-toggle {
-  width: 30px; /* Ajusta el tamaño según sea necesario */
+  width: 30px; 
   height: 30px;
   cursor: pointer;
   margin-left: 1rem;
 }
 
 .theme-toggle:hover {
-  opacity: 0.8; /* Efecto visual al pasar el cursor */
+  opacity: 0.8;
 }
-
 
 .navbar-links {
   list-style: none;
@@ -86,7 +89,7 @@ footer.dark-theme {
 }
 /* Footer Styles */
 footer {
-  background-color: transparent; /* Fondo transparente general */
+  background-color: transparent; 
   color: white;
   text-align: center;
   padding: 1rem 0;
@@ -94,12 +97,12 @@ footer {
 
 /* Franja roja solo para el texto "Powered by" */
 .footer-powered {
-  background-color: red; /* Fondo rojo para el texto */
-  color: white; /* Letra blanca */
+  background-color: red; 
+  color: white; 
   padding: 0.5rem 1rem;
-  border-radius: 5px; /* Opcional: bordes redondeados */
-  display: inline-block; /* Ajusta el tamaño de la franja al contenido */
-  margin-bottom: 0.5rem; /* Espacio entre la franja y el ícono */
+  border-radius: 5px; 
+  display: inline-block; 
+  margin-bottom: 0.5rem; 
 }
 
 .footer-content {
@@ -110,9 +113,82 @@ footer {
 }
 
 .footer-icon {
-  width: 50px; /* Ajusta el tamaño del ícono */
+  width: 50px; 
   height: auto;
-  margin-top: 0.5rem; /* Espaciado entre el texto y la imagen */
+  margin-top: 0.5rem; 
+}
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+
+.footer-powered {
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-icons {
+  display: flex; 
+  gap: 1rem; 
+  justify-content: center; 
+  align-items: center;
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+}
+
+.footer-icon {
+  width: 50px;
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+/* Social Icons Styles */
+.footer-social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  width: 30px; 
+  height: 30px;
+  filter: invert(100%); 
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-social-icons {
+    gap: 0.8rem;
+  }
 }
 
 
@@ -151,15 +227,15 @@ button:hover {
 }
 
 .card img {
-  width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
-  height: auto; /* Mantiene la proporción de la imagen */
+  width: 100%; 
+  height: auto; 
   border-radius: 5px;
   margin-bottom: 0.5rem;
-  object-fit: cover; /* Recorta la imagen si es más grande */
+  object-fit: cover; /
 }
 
 .card .card-image {
-  max-height: 150px; /* Limita la altura de la imagen */
+  max-height: 150px; 
   width: 100%;
   object-fit: cover;
 }
