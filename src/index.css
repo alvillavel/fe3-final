@@ -21,6 +21,8 @@ h1 {
   text-align: center; /* Centra horizontalmente */
   margin-top: 1rem;   /* Añade un margen superior */
 }
+
+
 .name-link {
   text-decoration: none;
   color: #007bff;
@@ -33,12 +35,21 @@ h1 {
   text-decoration: underline;
 }
 
-
-
 nav.dark-theme {
   background-color: #121212;
   color: white;
 }
+.theme-toggle {
+  width: 30px; /* Ajusta el tamaño según sea necesario */
+  height: 30px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8; /* Efecto visual al pasar el cursor */
+}
+
 
 .navbar-links {
   list-style: none;
@@ -73,6 +84,38 @@ footer.dark-theme {
   background-color: #121212;
   color: white;
 }
+/* Footer Styles */
+footer {
+  background-color: transparent; /* Fondo transparente general */
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Franja roja solo para el texto "Powered by" */
+.footer-powered {
+  background-color: red; /* Fondo rojo para el texto */
+  color: white; /* Letra blanca */
+  padding: 0.5rem 1rem;
+  border-radius: 5px; /* Opcional: bordes redondeados */
+  display: inline-block; /* Ajusta el tamaño de la franja al contenido */
+  margin-bottom: 0.5rem; /* Espacio entre la franja y el ícono */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon {
+  width: 50px; /* Ajusta el tamaño del ícono */
+  height: auto;
+  margin-top: 0.5rem; /* Espaciado entre el texto y la imagen */
+}
+
+
 
 /* Button Styles */
 button {
@@ -133,6 +176,59 @@ button:hover {
   gap: 1rem;
   justify-content: center;
 }
+
+/* Tarjeta General */
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  width: 200px;
+  background-color: white;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+}
+
+.name-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.name-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Favoritos */
+.fav-container {
+  background-color: #f0f0f0; 
+  width: 40px; 
+  height: 30px; 
+  margin: 0.5rem auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.fav-container:hover {
+  background-color: #e0e0e0; /
+}
+
+.fav-icon {
+  width: 15px; 
+  height: 15px;
+  object-fit: contain; 
+}
+
 
 /* Theme Styles */
 .dark-theme {

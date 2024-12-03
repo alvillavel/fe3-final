@@ -16,17 +16,22 @@ const Card = ({ name, username, id }) => {
   return (
     <div className="card">
       <img src="/images/doctor.jpg" alt="Doctor" className="card-image" />
-      {/* Convertimos el name en un enlace */}
       <Link to={`/dentist/${id}`} className="name-link">
         <h3>{name}</h3>
       </Link>
       <p>{username}</p>
-      <button onClick={addFav} className="favButton">Add Fav</button>
+      <div className="fav-container" onClick={addFav}>
+        <img src="/images/estrella.png" alt="Add to Favorites" className="fav-icon" />
+      </div>
     </div>
   );
 };
 
 export default Card;
+
+
+
+
 
 
 
