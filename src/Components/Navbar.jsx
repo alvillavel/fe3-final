@@ -22,7 +22,7 @@ const Navbar = () => {
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/favs">Favs</Link></li>
       </ul>
-      {/* Imagen que alterna entre temas */}
+      {/* Imagen */}
       <img
         src="/images/dark-mode.png"
         alt="Change Theme"

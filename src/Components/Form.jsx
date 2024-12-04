@@ -22,8 +22,8 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log('Formulario enviado:', formData);
-      setSuccessMessage(`Gracias ${formData.name}, te contactaremos cuando antes vía mail`);
+      console.log('Formulario enviado correctamente:', formData);
+      setSuccessMessage(`Gracias ${formData.name}, te contactaremos cuando antes via email`);
       setError('');
       setFormData({ name: '', email: '' });
     }

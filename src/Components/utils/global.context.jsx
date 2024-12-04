@@ -3,7 +3,7 @@ import React, { createContext, useReducer, useEffect } from "react";
 export const initialState = {
   theme: "light",
   data: [],
-  favorites: JSON.parse(localStorage.getItem("favorites")) || [], // Cargar favoritos desde localStorage
+  favorites: JSON.parse(localStorage.getItem("favorites")) || [], // Cargamos los favoritos desde localStorage
 };
 
 export const reducer = (state, action) => {
@@ -14,7 +14,7 @@ export const reducer = (state, action) => {
       return { ...state, data: action.payload };
     case "ADD_FAV":
       if (state.favorites.find((fav) => fav.id === action.payload.id)) {
-        return state; // Evitar duplicados
+        return state; // Evitarmos duplicados
       }
       return { ...state, favorites: [...state.favorites, action.payload] };
     default:
@@ -40,7 +40,7 @@ export const ContextProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  // Sincronizar favoritos con localStorage
+  // Se Sincronizan favoritos con localStorage
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(state.favorites));
   }, [state.favorites]);

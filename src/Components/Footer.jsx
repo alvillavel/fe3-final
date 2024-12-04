@@ -10,7 +10,6 @@ const Footer = () => {
         <div className="footer-powered">Powered by</div>
         <img src="/DH.ico" alt="DH Logo" className="footer-icon" />
       </div>
-      {/* Iconos de redes sociales en la misma fila */}
       <div className="footer-icons">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
           <img src="/images/ico-facebook.png" alt="Facebook" className="social-icon" />
